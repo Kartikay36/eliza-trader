@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elizabeth Trader | Professional Trading Solutions</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Elizabeth Trader offers professional trading services, market analysis, and investment strategies. Join our Telegram channel for daily signals and trading tips.">
+    <meta name="keywords" content="Elizabeth Trader, trading, investment, market analysis, trading signals, professional trader, financial markets, trading strategy">
+    <meta name="author" content="Elizabeth Trader">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Elizabeth Trader | Professional Trading Solutions">
+    <meta property="og:description" content="Professional trading services, market analysis and investment strategies by Elizabeth.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elizabethtrader.com">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Elizabeth Trader | Professional Trading Solutions">
+    <meta name="twitter:description" content="Professional trading services, market analysis and investment strategies by Elizabeth.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📊</text></svg>">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
+    <!-- TradingView Widget Script -->
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #2a52be;
+            --secondary-color: #1c3d8c;
+            --accent-color: #ffd700;
+            --dark-color: #1a1a2e;
+            --light-color: #f5f5f5;
+            --text-color: #333;
+            --text-light: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            background-color: #e6c200;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: #fff;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 36px;
+            color: var(--primary-color);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-img {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .about-img img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 25px;
+        }
+        
+        /* Market Section */
+        .market {
+            padding: 100px 0;
+            background-color: #fff;
+            position: relative;
+        }
+        
+        .market-chart {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 0 auto;
+            max-width: 100%;
+            height: 500px;
+        }
+        
+        .chart-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .chart-tab {
+            border: none;
+            background-color: #f0f0f0;
+            color: var(--text-color);
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .chart-tab:hover, .chart-tab.active {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+        
+        
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card i {
+            font-size: 48px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: #fff;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .social-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: transform 0.3s;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-10px);
+        }
+        
+        .social-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            transition: background-color 0.3s;
+        }
+        
+        .social-link:hover .social-icon {
+            background-color: var(--secondary-color);
+        }
+        
+        .social-icon i {
+            font-size: 36px;
+            color: #fff;
+        }
+        
+        .social-link span {
+            font-weight: 500;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--text-light);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        
+        .footer-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            color: #999;
+            font-size: 14px;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 700px;
+            padding: 40px;
+            position: relative;
+            animation: modalOpen 0.5s;
+        }
+        
+        @keyframes modalOpen {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #777;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: var(--dark-color);
+        }
+        
+        .profile-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid var(--primary-color);
+        }
+        
+        .profile-name {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .profile-title {
+            font-size: 18px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+        
+        .profile-description {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .profile-stats {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .stat-label {
+            color: #777;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-img, .about-text {
+                flex: none;
+                width: 100%;
+            }
+            
+            .about-img {
+                margin-bottom: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--primary-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: all 0.5s;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 20px 0;
+            }
+            
+            .burger {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 30px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .social-links {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo"><i class="fas fa-chart-line"></i> Elizabeth Trader</a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#market">Market</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" id="profile-btn">Profile</a></li>
+                </ul>
+                <div class="burger" id="burger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Professional Trading Solutions</h1>
+            <p>Join Elizabeth's trading community to receive expert market analysis, trading strategies, and investment opportunities. You can also join us by investing a small amount like $50.</p>
+            <a href="https://t.me/binsuccess" class="btn" target="_blank"><i class="fab fa-telegram"></i> Join Telegram Channel</a>
+        </div>
+    </section>
+
+    <!-- Market Section -->
+    <section class="market" id="market">
+        <div class="container">
+            <h2 class="section-title">Live Crypto Market</h2>
+            <div class="chart-tabs">
+                <button class="chart-tab active" data-symbol="BTCUSD">Bitcoin</button>
+                <button class="chart-tab" data-symbol="ETHUSD">Ethereum</button>
+                <button class="chart-tab" data-symbol="XRPUSD">Ripple</button>
+                <button class="chart-tab" data-symbol="LTCUSD">Litecoin</button>
+                <button class="chart-tab" data-symbol="BNBUSD">Binance Coin</button>
+            </div>
+            <div class="market-chart" id="tradingview-widget-container"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Elizabeth</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="/home/kartik/Desktop/web2/Pasted image.png" alt="Elizabeth Trader">
+                </div>
+                <div class="about-text">
+                    <h3>Professional Trader & Market Analyst</h3>
+                    <p>With years of experience in financial markets, Elizabeth has developed successful trading strategies that have proven effective in various market conditions. Her analytical approach and technical expertise have helped numerous clients achieve their financial goals.</p>
+                    <p>Elizabeth specializes in cryptocurrency trading, forex, and stock market analysis, providing timely signals and in-depth market insights to her growing community of traders.</p>
+                    <a href="#" id="profile-btn-2" class="btn">View Full Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Trading Services</h2>
+            <div class="service-cards">
+                <div class="service-card">
+                    <i class="fas fa-signal"></i>
+                    <h3>Trading Signals</h3>
+                    <p>Receive timely and accurate trading signals with entry points, copy trading facility, take-profit levels, and stop-loss recommendations.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Market Analysis</h3>
+                    <p>Get detailed technical and fundamental analysis of various markets to make informed trading decisions.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Trading Education</h3>
+                    <p>Learn trading strategies, risk management techniques, and market psychology from an experienced professional. Start with just a $50 investment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Connect With Elizabeth</h2>
+            <div class="social-links">
+                <a href="https://t.me/binsuccess" class="social-link" target="_blank">
+                    <div class="social-icon">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <span>Telegram Channel</span>
+                </a>
+                <a href="https://t.me/elizabethtrader_young_money" class="social-link" target="_blank">
+                    <div class="social-icon">
+                        <i class="fab fa-telegram-plane"></i>
+                    </div>
+                    <span>Telegram Profile</span>
+                </a>
+                <a href="https://instagram.com/eliza_binarytrader" class="social-link" target="_blank">
+                    <div class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <span>Instagram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="footer-logo">Elizabeth Trader</a>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#market">Market</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                &copy; <span id="current-year"></span> Elizabeth Trader. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Profile Modal -->
+    <div class="modal" id="profile-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <div class="profile-content">
+                <img src="/home/kartik/Desktop/web2/Pasted image.png" alt="Elizabeth Trader" class="profile-img">
+                <h2 class="profile-name">Elizabeth</h2>
+                <p class="profile-title">Professional Trader & Market Analyst</p>
+                <div class="profile-description">
+                    <p>Elizabeth is a seasoned professional trader with extensive experience in cryptocurrency, forex, and stock markets. With a proven track record of successful trades and a commitment to helping others succeed, Elizabeth has built a thriving community of traders who benefit from her insights and expertise.</p>
+                    <p>Her analytical approach combines technical analysis, fundamental research, and market psychology to identify profitable trading opportunities in various market conditions. You can join her exclusive trading community with an initial investment as low as $50.</p>
+                </div>
+                <div class="profile-stats">
+                    <div class="stat">
+                        <div class="stat-value">5+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">3.2k+</div>
+                        <div class="stat-label">Community Members</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">90-100%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://t.me/elizabethtrader_young_money" class="social-link" target="_blank">
+                        <div class="social-icon">
+                            <i class="fab fa-telegram"></i>
+                        </div>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="https://instagram.com/eliza_binarytrader" class="social-link" target="_blank">
+                        <div class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Update current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Mobile menu toggle
+        const burger = document.getElementById('burger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            burger.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                burger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Profile modal
+        const profileModal = document.getElementById('profile-modal');
+        const profileBtn = document.getElementById('profile-btn');
+        const profileBtn2 = document.getElementById('profile-btn-2');
+        const closeModal = document.getElementById('close-modal');
+        
+        profileBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            profileModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+        
+        profileBtn2.addEventListener('click', (e) => {
+            e.preventDefault();
+            profileModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeModal.addEventListener('click', () => {
+            profileModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === profileModal) {
+                profileModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') !== '#' && !this.getAttribute('id').includes('profile-btn')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // TradingView Widget
+        document.addEventListener('DOMContentLoaded', function() {
+            const chartContainer = document.getElementById('tradingview-widget-container');
+            const chartTabs = document.querySelectorAll('.chart-tab');
+            let widget;
+            
+            function createWidget(symbol) {
+                // Remove existing widget if any
+                if (chartContainer.innerHTML) {
+                    chartContainer.innerHTML = '';
+                }
+                
+                // Create new widget
+                widget = new TradingView.widget({
+                    "autosize": true,
+                    "symbol": symbol,
+                    "interval": "D",
+                    "timezone": "Etc/UTC",
+                    "theme": "light",
+                    "style": "1",
+                    "locale": "en",
+                    "toolbar_bg": "#f1f3f6",
+                    "enable_publishing": false,
+                    "hide_top_toolbar": false,
+                    "hide_legend": false,
+                    "save_image": false,
+                    "container_id": "tradingview-widget-container"
+                });
+            }
+            
+            // Initialize with Bitcoin chart
+            createWidget("BINANCE:BTCUSDT");
+            
+            // Tab switching functionality
+            chartTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    chartTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Get symbol from data attribute
+                    const symbol = "BINANCE:" + this.getAttribute('data-symbol') + "T";
+                    
+                    // Create new widget with selected symbol
+                    createWidget(symbol);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
