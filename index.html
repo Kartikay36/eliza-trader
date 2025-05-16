@@ -277,28 +277,35 @@
         .contact {
             padding: 100px 0;
             background-color: #fff;
+            text-align: center; /* Center all content */
         }
-        
+
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 50px; /* Increased gap for better spacing */
             margin-top: 50px;
+            flex-wrap: wrap; /* Allows wrapping on small screens */
+            max-width: 1200px; /* Optional: limits maximum width */
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px; /* Prevents touching screen edges on mobile */
         }
-        
+
         .social-link {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-decoration: none;
             color: var(--text-color);
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+            min-width: 120px; /* Ensures consistent width for each link */
         }
-        
+
         .social-link:hover {
             transform: translateY(-10px);
         }
-        
+
         .social-icon {
             width: 80px;
             height: 80px;
@@ -308,20 +315,52 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 15px;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
         }
-        
+
         .social-link:hover .social-icon {
             background-color: var(--secondary-color);
         }
-        
+
         .social-icon i {
             font-size: 36px;
             color: #fff;
         }
-        
+
         .social-link span {
             font-weight: 500;
+            text-align: center;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+        .social-links {
+            gap: 30px; /* Smaller gap on mobile */
+        }
+    
+        .social-link {
+            min-width: 100px; /* Smaller minimum width on mobile */
+        }
+        }
+
+        @media (max-width: 480px) {
+         .social-links {
+            gap: 20px; /* Even smaller gap on very small screens */
+            justify-content: space-around; /* Better spacing on small screens */
+        }
+    
+        .social-icon {
+            width: 60px;
+            height: 60px; /* Smaller icons on mobile */
+        }
+    
+        .social-icon i {
+            font-size: 28px; /* Smaller icon size on mobile */
+        }
+    
+        .social-link span {
+            font-size: 14px; /* Smaller text on mobile */
+        }
         }
         
         /* Footer */
