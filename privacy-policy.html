@@ -1,89 +1,737 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | Elizabeth Trader</title>
+    <title>Privacy Policy | Elizabeth Trader - Crypto & Binary Trading Expert</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="Privacy policy for Elizabeth Trader's crypto and binary options trading education. Learn how we collect and protect your data.">
+    <meta name="keywords" content="trading privacy policy, crypto data protection, binary options privacy, financial privacy policy, trading education data">
+    <meta name="author" content="Elizabeth Trader">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://elizabethtrader.com/privacy-policy" />
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Privacy Policy | Elizabeth Trader">
+    <meta property="og:description" content="How Elizabeth Trader collects and protects your personal information.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elizabethtrader.com/privacy-policy">
+    <meta property="og:image" content="https://elizabethtrader.com/images/privacy-policy-og.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🚀</text></svg>">
+    
+    <!-- Preload Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
+    </noscript>
+    
     <style>
+        /* Reuse the same CSS variables from index.html */
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #7c3aed;
+            --accent-color: #f59e0b;
+            --accent-dark: #d97706;
+            --dark-color: #1e1b4b;
+            --darker-color: #0f172a;
+            --light-color: #f8fafc;
+            --text-color: #334155;
+            --text-light: #f1f5f9;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --transition-speed: 0.4s;
+            --border-radius: 12px;
+            --border-radius-lg: 20px;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --box-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+        }
+        
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--dark-color);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
-        h1, h2 {
-            color: #2a52be;
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(37, 99, 235, 0.9);
+            color: var(--text-light);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all var(--transition-speed);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        h1 {
+        
+        header.scrolled {
+            padding: 12px 0;
+            background-color: rgba(30, 27, 75, 0.95);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: all var(--transition-speed);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .logo:hover {
+            transform: translateY(-2px);
+            color: var(--accent-color);
+        }
+        
+        .logo i {
+            margin-right: 12px;
+            color: var(--accent-color);
+            font-size: 1.5em;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all var(--transition-speed);
+            position: relative;
+            padding: 8px 0;
+            font-size: 1.05rem;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width var(--transition-speed);
+            border-radius: 3px;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .nav-links .active-link {
+            color: var(--accent-color);
+        }
+        
+        .nav-links .active-link::after {
+            width: 100%;
+        }
+        
+        .burger {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+            background: transparent;
+            border: none;
+            outline: none;
+        }
+        
+        .burger i {
+            color: white;
+            font-size: 1.8rem;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 180px 0 80px;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
             margin-bottom: 20px;
-            border-bottom: 2px solid #eee;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .page-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 5px;
+            background: var(--gradient-accent);
+            margin: 20px auto 0;
+            border-radius: 5px;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Privacy Content */
+        .privacy-content {
+            background-color: white;
+            border-radius: var(--border-radius-lg);
+            padding: 50px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 60px;
+        }
+        
+        .privacy-section {
+            margin-bottom: 40px;
+        }
+        
+        .privacy-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .privacy-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            position: relative;
             padding-bottom: 10px;
         }
-        h2 {
-            margin-top: 30px;
+        
+        .privacy-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-accent);
+            border-radius: 3px;
         }
-        p, ul {
-            margin-bottom: 15px;
+        
+        .privacy-section p, .privacy-section ul {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
         }
-        ul {
+        
+        .privacy-section ul {
             padding-left: 20px;
         }
+        
+        .privacy-section li {
+            margin-bottom: 10px;
+        }
+        
+        .warning-box {
+            background-color: #fff5f5;
+            border-left: 4px solid var(--danger-color);
+            padding: 20px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 30px 0;
+        }
+        
+        .warning-box h4 {
+            color: var(--danger-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .warning-box h4 i {
+            margin-right: 10px;
+        }
+        
+        .info-box {
+            background-color: #f0f9ff;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 30px 0;
+        }
+        
+        .info-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-box h4 i {
+            margin-right: 10px;
+        }
+        
         .last-updated {
             font-style: italic;
-            color: #666;
+            color: #64748b;
+            margin-bottom: 30px;
+            display: block;
+            text-align: center;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--darker-color);
+            color: var(--text-light);
+            padding: 80px 0 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-wave {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23f8fafc" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23f8fafc" opacity=".5"/></svg>');
+            background-size: 1200px 100px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-decoration: none;
+            margin-bottom: 20px;
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .footer-logo i {
+            color: var(--accent-color);
+            margin-right: 10px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color var(--transition-speed);
+            font-size: 1.05rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+        
+        .footer-seo-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            width: 100%;
+        }
+        
+        .footer-seo-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color var(--transition-speed);
+        }
+        
+        .footer-seo-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .main-content {
+                padding: 160px 0 60px;
+            }
+            
+            .page-title {
+                font-size: 2.2rem;
+            }
+            
+            .privacy-content {
+                padding: 40px 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: var(--dark-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding-top: 80px;
+                transition: all 0.5s;
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 25px 0;
+            }
+            
+            .burger {
+                display: block;
+            }
+            
+            .main-content {
+                padding: 140px 0 50px;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .page-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .privacy-section h2 {
+                font-size: 1.6rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .main-content {
+                padding: 120px 0 40px;
+            }
+            
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .privacy-content {
+                padding: 30px 20px;
+            }
+            
+            .privacy-section h2 {
+                font-size: 1.4rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy</h1>
-    <p class="last-updated">Last Updated: June 7, 2024</p>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo" aria-label="Elizabeth Trader Home"><i class="fas fa-rocket"></i> Elizabeth Trader</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#market">Market</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <button class="burger" id="burger" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
 
-    <p>Elizabeth Trader ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website elizabethtrader.com (the "Site").</p>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Privacy Policy</h1>
+                <p class="page-subtitle">How we collect, use, and protect your personal information</p>
+                <span class="last-updated">Last Updated: June 7, 2025</span>
+            </div>
+            
+            <div class="privacy-content">
+                <div class="privacy-section">
+                    <p>Your privacy is important to us. This Privacy Policy outlines how Elizabeth Trader ("we", "us", or "our") collects, uses, and protects your information when you use our website and services.</p>
+                </div>
+                
+                <div class="privacy-section">
+                    <h2>1. Information We Collect</h2>
+                    <p>We may collect the following types of information:</p>
+                    <ul>
+                        <li><strong>Personal Identification Information:</strong> Name, email address, phone number when you contact us or sign up for services</li>
+                        <li><strong>Technical Data:</strong> IP address, browser type and version, time zone setting, browser plug-in types and versions</li>
+                        <li><strong>Usage Data:</strong> Information about how you use our website and services</li>
+                        <li><strong>Marketing and Communications Data:</strong> Your preferences in receiving marketing from us and your communication preferences</li>
+                    </ul>
+                    
+                    <div class="info-box">
+                        <h4><i class="fas fa-info-circle"></i> Data Minimization</h4>
+                        <p>We only collect data that is necessary for providing our services and improving your experience. We never collect sensitive financial information like credit card numbers or bank account details.</p>
+                    </div>
+                </div>
+                
+                <div class="privacy-section">
+                    <h2>2. How We Use Your Information</h2>
+                    <p>We use the information we collect in the following ways:</p>
+                    <ul>
+                        <li>To provide and maintain our services</li>
+                        <li>To notify you about changes to our services</li>
+                        <li>To allow you to participate in interactive features of our service when you choose to do so</li>
+                        <li>To provide customer support</li>
+                        <li>To gather analysis or valuable information so that we can improve our services</li>
+                        <li>To monitor the usage of our services</li>
+                        <li>To detect, prevent and address technical issues</li>
+                        <li>To provide you with news, special offers and general information about other goods, services and events which we offer (only if you have opted-in)</li>
+                    </ul>
+                </div>
+                
+                <div class="privacy-section">
+                    <h2>3. Data Protection & Security</h2>
+                    <p>We implement appropriate technical and organizational measures to ensure a level of security appropriate to the risk:</p>
+                    <ul>
+                        <li>Encryption of data in transit using SSL/TLS protocols</li>
+                        <li>Secure servers with restricted access</li>
+                        <li>Regular security audits and vulnerability testing</li>
+                        <li>Limited access to personal data on a need-to-know basis</li>
+                    </ul>
+                    
+                    <div class="warning-box">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Data Breach Notification</h4>
+                        <p>In the unlikely event of a data breach that affects your personal information, we will notify you and the relevant authorities as required by applicable laws.</p>
+                    </div>
+                </div>
+                
+                <div class="privacy-section">
+                    <h2>4. Cookies and Tracking Technologies</h2>
+                    <p>We use cookies and similar tracking technologies to track activity on our website and hold certain information:</p>
+                    <ul>
+                        <li><strong>Essential Cookies:</strong> Necessary for the website to function properly</li>
+                        <li><strong>Analytics Cookies:</strong> Help us understand how visitors interact with our website</li>
+                        <li><strong>Preference Cookies:</strong> Remember your preferences and settings</li>
+                        <li><strong>Marketing Cookies:</strong> Used to track visitors across websites (only if you consent)</li>
+                    </ul>
+                    <p>You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our service.</p>
+                </div>
+                
+                <div class="privacy-section">
+                    <h2>5. Third-Party Services</h2>
+                    <p>We may employ third-party companies and individuals to facilitate our services ("Service Providers"), provide services on our behalf, or assist us in analyzing how our services are used. These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p>
+                    <p>Examples of third-party services we use include:</p>
+                    <ul>
+                        <li>Google Analytics for website analytics</li>
+                        <li>Telegram for communication services</li>
+                        <li>Cloudflare for security and performance</li>
+                    </ul>
+                </div>
+                
+                <div class="privacy-section">
+                    <h2>6. Your Data Protection Rights</h2>
+                    <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+                    <ul>
+                        <li><strong>Right to Access:</strong> You can request copies of your personal data.</li>
+                        <li><strong>Right to Rectification:</strong> You can request that we correct any information you believe is inaccurate.</li>
+                        <li><strong>Right to Erasure:</strong> You can request that we erase your personal data under certain conditions.</li>
+                        <li><strong>Right to Restrict Processing:</strong> You can request that we restrict the processing of your personal data.</li>
+                        <li><strong>Right to Object to Processing:</strong> You can object to our processing of your personal data.</li>
+                        <li><strong>Right to Data Portability:</strong> You can request that we transfer the data we have collected to another organization, or directly to you.</li>
+                    </ul>
+                    <p>To exercise any of these rights, please contact us using the information provided at the end of this policy.</p>
+                </div>
+                
+                <div class="privacy-section">
+                    <h2>7. Changes to This Privacy Policy</h2>
+                    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top of this policy.</p>
+                    <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+                </div>
+                
+                <div class="privacy-section">
+                    <h2>8. Contact Us</h2>
+                    <p>If you have any questions about this Privacy Policy or wish to exercise any of your data protection rights, please contact us:</p>
+                    <ul>
+                        <li>Email: support@elizabethtrader.com</li>
+                        <li>Telegram: <a href="https://t.me/Maria_Olavide_Brejilla">@support</a></li>
+                    </ul>
+                    
+                    <div class="warning-box">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Legal Disclaimer</h4>
+                        <p>This privacy policy is for informational purposes only and does not constitute legal advice. For comprehensive legal advice regarding data protection, please consult with a qualified attorney.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-    <h2>1. Information We Collect</h2>
-    <p>We may collect information about you in a variety of ways:</p>
-    <ul>
-        <li><strong>Personal Data:</strong> When you contact us or subscribe to our services, we may collect personally identifiable information such as your name, email address, and Telegram username.</li>
-        <li><strong>Derivative Data:</strong> Information our servers automatically collect when you access the Site, such as your IP address, browser type, operating system, access times, and pages viewed.</li>
-        <li><strong>Financial Data:</strong> If you purchase any of our services, we may collect payment information, which is processed through third-party payment processors.</li>
-    </ul>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-wave"></div>
+        <div class="container">
+            <div class="footer-content">
+                <a href="index.html" class="footer-logo" aria-label="Elizabeth Trader Home"><i class="fas fa-rocket"></i> Elizabeth Trader</a>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#market">Market</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-seo-links">
+                <a href="privacy-policy.html" class="active">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="risk-disclosure.html">Risk Disclosure</a>
+            </div>
+            <div class="copyright">
+                &copy; <span id="current-year"></span> Elizabeth Trader. All rights reserved.
+            </div>
+        </div>
+    </footer>
 
-    <h2>2. Use of Your Information</h2>
-    <p>We use the information we collect to:</p>
-    <ul>
-        <li>Provide and maintain our services</li>
-        <li>Notify you about changes to our services</li>
-        <li>Allow you to participate in interactive features of our Site</li>
-        <li>Provide customer support</li>
-        <li>Gather analysis to improve our Site</li>
-        <li>Monitor usage of our Site</li>
-        <li>Detect, prevent, and address technical issues</li>
-    </ul>
+    <script>
+        // Update current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Header scroll effect
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
 
-    <h2>3. Disclosure of Your Information</h2>
-    <p>We may share information we have collected about you in certain situations:</p>
-    <ul>
-        <li><strong>By Law or to Protect Rights:</strong> If we believe disclosure is necessary to comply with any applicable law or legal process.</li>
-        <li><strong>Third-Party Service Providers:</strong> We may share your information with third parties that perform services for us, including payment processing, data analysis, email delivery, and hosting services.</li>
-    </ul>
+        // Mobile menu toggle
+        const burger = document.getElementById('burger');
+        const navLinks = document.querySelector('.nav-links');
 
-    <h2>4. Third-Party Websites</h2>
-    <p>Our Site may contain links to third-party websites. We have no control over the content, policies, or practices of these websites and are not responsible for their privacy practices.</p>
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            burger.classList.toggle('active');
+        });
 
-    <h2>5. Security of Your Information</h2>
-    <p>We implement reasonable security measures to protect your information. However, no electronic transmission or storage of information can be entirely secure, so we cannot guarantee absolute security.</p>
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                burger.classList.remove('active');
+            });
+        });
 
-    <h2>6. Policy for Children</h2>
-    <p>We do not knowingly solicit information from or market to children under the age of 18. If we learn that we have collected personal information from a child under 18, we will delete that information.</p>
-
-    <h2>7. Changes to This Privacy Policy</h2>
-    <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
-
-    <h2>8. Contact Us</h2>
-    <p>If you have questions about this Privacy Policy, please contact us at:</p>
-    <p>Email: privacy@elizabethtrader.com<br>
-    Telegram: <a href="https://t.me/elizabethtrader_young_money">@elizabethtrader_young_money</a></p>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.getElementById('main-header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
