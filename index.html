@@ -1422,7 +1422,84 @@
     <header id="main-header">
         <div class="container">
             <nav>
-                <a href="#" class="logo" aria-label="Elizabeth Trader Home"><i class="fas fa-chart-line"></i> Elizabeth Trader</a>
+                <a href="#" class="logo" aria-label="Elizabeth Trader Home" style="display: flex; align-items: center; gap: 10px;">
+  <svg id="candlestick-logo" width="34" height="30" viewBox="0 0 28 24" fill="none" style="overflow: visible;">
+    <!-- Candle 1 -->
+    <rect id="candle1" x="4" y="12" width="2" height="8" fill="#f59e0b" />
+    <!-- Candle 2 -->
+    <rect id="candle2" x="10" y="6" width="2" height="14" fill="#f59e0b" />
+    <!-- Candle 3 -->
+    <rect id="candle3" x="16" y="10" width="2" height="10" fill="#f59e0b" />
+    <!-- Candle 4 -->
+    <rect id="candle4" x="22" y="8" width="2" height="12" fill="#f59e0b" />
+    <!-- Base line -->
+    <rect x="2" y="22" width="24" height="2" fill="#2563eb"/>
+  </svg>
+  <span style="font-weight: 700; font-size: 1.75rem; background: linear-gradient(135deg, #2563eb, #7c3aed); -webkit-background-clip: text; color: transparent; font-family: 'Montserrat', sans-serif;">
+    Elizabeth Trader
+  </span>
+</a>
+
+<script>
+  // Setup animation parameters for each candle
+  const candles = [
+    {
+      element: document.getElementById('candle1'),
+      baseY: 12,
+      baseHeight: 8,
+      amplitude: 4,
+      speed: 0.005,
+      phase: 0
+    },
+    {
+      element: document.getElementById('candle2'),
+      baseY: 6,
+      baseHeight: 14,
+      amplitude: 4,
+      speed: 0.004,
+      phase: Math.PI / 2
+    },
+    {
+      element: document.getElementById('candle3'),
+      baseY: 10,
+      baseHeight: 10,
+      amplitude: 4,
+      speed: 0.006,
+      phase: Math.PI
+    },
+    {
+      element: document.getElementById('candle4'),
+      baseY: 8,
+      baseHeight: 12,
+      amplitude: 4,
+      speed: 0.0055,
+      phase: 1.5 * Math.PI
+    }
+  ];
+
+  let lastTimestamp = null;
+
+  function animate(timestamp) {
+    if (!lastTimestamp) lastTimestamp = timestamp;
+    const elapsed = timestamp - lastTimestamp;
+
+    candles.forEach(candle => {
+      candle.phase += candle.speed * elapsed;
+
+      const newHeight = candle.baseHeight + candle.amplitude * Math.sin(candle.phase);
+      const newY = candle.baseY - (newHeight - candle.baseHeight);
+
+      candle.element.setAttribute('height', newHeight);
+      candle.element.setAttribute('y', newY);
+    });
+
+    lastTimestamp = timestamp;
+    requestAnimationFrame(animate);
+  }
+
+  requestAnimationFrame(animate);
+</script>
+
                 <ul class="nav-links">
                     <li><a href="#home" class="active-link">Home</a></li>
                     <li><a href="#market">Market</a></li>
@@ -1769,7 +1846,84 @@ Whether you're a beginner or an intermediate trader, our crypto and binary optio
         <div class="footer-wave"></div>
         <div class="container">
             <div class="footer-content">
-                <a href="#" class="footer-logo" aria-label="Elizabeth Trader Home"><i class="fas fa-rocket"></i> Elizabeth Trader</a>
+                <a href="#" class="logo" aria-label="Elizabeth Trader Home" style="display: flex; align-items: center; gap: 10px;">
+  <svg id="candlestick-logo" width="34" height="30" viewBox="0 0 28 24" fill="none" style="overflow: visible;">
+    <!-- Candle 1 -->
+    <rect id="candle1" x="4" y="12" width="2" height="8" fill="#f59e0b" />
+    <!-- Candle 2 -->
+    <rect id="candle2" x="10" y="6" width="2" height="14" fill="#f59e0b" />
+    <!-- Candle 3 -->
+    <rect id="candle3" x="16" y="10" width="2" height="10" fill="#f59e0b" />
+    <!-- Candle 4 -->
+    <rect id="candle4" x="22" y="8" width="2" height="12" fill="#f59e0b" />
+    <!-- Base line -->
+    <rect x="2" y="22" width="24" height="2" fill="#2563eb"/>
+  </svg>
+  <span style="font-weight: 700; font-size: 1.75rem; background: linear-gradient(135deg, #2563eb, #7c3aed); -webkit-background-clip: text; color: transparent; font-family: 'Montserrat', sans-serif;">
+    Elizabeth Trader
+  </span>
+</a>
+
+<script>
+  // Setup animation parameters for each candle
+  const candles = [
+    {
+      element: document.getElementById('candle1'),
+      baseY: 12,
+      baseHeight: 8,
+      amplitude: 4,
+      speed: 0.005,
+      phase: 0
+    },
+    {
+      element: document.getElementById('candle2'),
+      baseY: 6,
+      baseHeight: 14,
+      amplitude: 4,
+      speed: 0.004,
+      phase: Math.PI / 2
+    },
+    {
+      element: document.getElementById('candle3'),
+      baseY: 10,
+      baseHeight: 10,
+      amplitude: 4,
+      speed: 0.006,
+      phase: Math.PI
+    },
+    {
+      element: document.getElementById('candle4'),
+      baseY: 8,
+      baseHeight: 12,
+      amplitude: 4,
+      speed: 0.0055,
+      phase: 1.5 * Math.PI
+    }
+  ];
+
+  let lastTimestamp = null;
+
+  function animate(timestamp) {
+    if (!lastTimestamp) lastTimestamp = timestamp;
+    const elapsed = timestamp - lastTimestamp;
+
+    candles.forEach(candle => {
+      candle.phase += candle.speed * elapsed;
+
+      const newHeight = candle.baseHeight + candle.amplitude * Math.sin(candle.phase);
+      const newY = candle.baseY - (newHeight - candle.baseHeight);
+
+      candle.element.setAttribute('height', newHeight);
+      candle.element.setAttribute('y', newY);
+    });
+
+    lastTimestamp = timestamp;
+    requestAnimationFrame(animate);
+  }
+
+  requestAnimationFrame(animate);
+</script>
+
                 <ul class="footer-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#market">Market</a></li>
